@@ -37,6 +37,14 @@ export function useNavbar(sectionIds = []) {
   const onScroll = useCallback(() => {
     setIsFloating(window.scrollY > 80);
 
+    // If scrolled near the bottom of the page, activate the last section
+    const scrollBottom = window.scrollY + window.innerHeight;
+    const pageHeight = document.documentElement.scrollHeight;
+    if (scrollBottom >= pageHeight - 60) {
+      setActiveSection(sectionIds[sectionIds.length - 1] ?? "");
+      return;
+    }
+
     const triggerPoint = window.scrollY + 140;
     let current = sectionIds[0] ?? "";
     sectionIds.forEach((id) => {
