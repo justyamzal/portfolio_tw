@@ -76,10 +76,10 @@ export default function Hero() {
             <a
               href={cvLink}
               className={[
-                "inline-flex items-center justify-center px-6 py-3.5 rounded-[14px]",
+                "inline-flex items-center justify-center px-6 py-3.5 rounded-[14px] mx-auto md:mx-0",
                 "font-semibold border border-white/12 bg-white/4 text-white",
                 "transition-all duration-300 hover:-translate-y-1",
-                "hover:border-transparent hover:bg-gradient-to-r hover:from-violet-500 hover:to-cyan-400",
+                "hover:border-none hover:bg-gradient-to-r hover:from-violet-500 hover:to-cyan-400",
               ].join(" ")}
             >
               Download CV
