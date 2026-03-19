@@ -1,0 +1,5 @@
+{
+  "tailwindCSS.lint.suggestCanonicalClasses": false,
+  "tailwindCSS.lint.invalidApply": false,
+  "tailwindCSS.lint.invalidConfigPath": false
+}
