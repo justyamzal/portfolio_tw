@@ -118,7 +118,7 @@ export default function Navbar({ isFloating, activeSection }) {
         {menuOpen && (
           <nav
             className={[
-              "nav-mobile-open md:hidden absolute left-0 right-0 mt-0",
+              "nav-mobile-open md:hidden absolute left-4 right-4 mt-2.5",
               "flex flex-col gap-0 p-4 rounded-2xl",
               "border border-white/12 backdrop-blur-lg",
               isFloating
