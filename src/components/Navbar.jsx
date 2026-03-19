@@ -39,12 +39,12 @@ export default function Navbar({ isFloating, activeSection }) {
             href="#about"
             onClick={closeMenu}
             className={[
-              "text-[1.15rem] font-bold tracking-wide transition-opacity duration-200",
+              "brand-logo text-[1.15rem] font-bold tracking-wide transition-opacity duration-200",
               isFloating ? "hidden md:hidden" : "block",
             ].join(" ")}
           >
-            <span className="text-violet-500">Yadri</span>{" "}
-            <span className="text-violet-500">Amtsal</span>
+            <span className="font-brand text-3xl text-violet-500">Y.</span>{""}
+            <span className="font-brand text-3xl text-violet-500">A</span>
           </a>
 
           {/* Brand — always visible on mobile when floating */}
@@ -54,8 +54,8 @@ export default function Navbar({ isFloating, activeSection }) {
               onClick={closeMenu}
               className="block md:hidden text-[1rem] font-bold tracking-wide"
             >
-              <span className="text-violet-500">Yadri</span>{" "}
-              <span className="text-violet-500">Amtsal</span>
+              <span className="font-brand text-3xl text-violet-500">Y.</span>{""}
+            <span className="font-brand text-3xl text-violet-500">A</span>
             </a>
           )}
 

@@ -60,7 +60,7 @@ export default function Hero() {
           {/* Description */}
           <p
             ref={addSeq}
-            className="hero-seq mt-6 max-w-[640px] text-slate-400 text-[1.08rem] leading-[1.9]"
+            className="hero-seq mt-6 max-w-[640px] text-slate-400 text-[1.08rem] xs:text-center leading-[1.9]"
             style={{ animationDelay: "0.72s" }}
           >
             I'm <strong className="text-white">{name}</strong>,{" "}

@@ -58,7 +58,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <footer className="py-7 pb-10 text-center text-slate-500 text-[0.92rem] border-t border-white/5 relative z-[1]">
+      <footer className="py-7 pb-10 xs:px-10  text-center text-slate-500 text-[0.92rem] border-t border-white/5 relative z-[1]">
         {footerText}
       </footer>
     </>

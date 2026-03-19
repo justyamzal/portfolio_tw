@@ -27,6 +27,8 @@
   --shadow-card: 0 18px 50px rgba(2, 6, 23, 0.35);
   --radius-card: 24px;
   --container:   1180px;
+
+    --font-brand: 'Bitcount Prop Double', sans-serif;
 }
 
 /* ── 2. Base ──────────────────────────────────────────────── */
@@ -118,6 +120,18 @@ body {
   animation: heroImageReveal 1.15s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
+.brand-logo {
+  color: #8b5cf6; /* violet-500 */
+  transition: all 0.3s ease;
+}
+
+.brand-logo:hover {
+  background: linear-gradient(90deg, var(--color-cyan), var(--color-violet));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 /* ── 5. Project card overlay (::after pseudo-element) ───── */
 /* Tailwind tidak support ::after dengan gradient kompleks ini */
 .project-image::after {
@@ -185,9 +199,3 @@ body {
   from { opacity: 0; transform: translateY(-10px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-
-
-/* ───── Footer ────────────────────────────────────────────── */
-/* footer {
-  padding-bottom: max(40px, env(safe-area-inset-bottom));
-} */
