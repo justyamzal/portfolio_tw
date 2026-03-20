@@ -29,17 +29,17 @@ function ContactTile({ label, href }) {
       title={label}
       className={[
         "reveal group flex flex-col items-center justify-center gap-2.5",
-        "border border-white/8 bg-slate-900/60 backdrop-blur-[16px]",
+        "border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
         "rounded-xl p-4 w-[100px] h-[100px]",
         "transition-all duration-300 hover:-translate-y-1 hover:scale-[1.08]",
-        "hover:border-violet-500/40 hover:shadow-[0_6px_24px_rgba(139,92,246,0.2)]",
-        "hover:bg-violet-500/10",
+        "hover:border-cyan-400/40 hover:shadow-[0_6px_24px_rgba(34,211,238,0.12)]",
+        "hover:bg-cyan-400/10",
       ].join(" ")}
     >
-      <span className="text-violet-400 transition-all duration-300 group-hover:text-violet-300 group-hover:scale-110">
+      <span className="text-violet-400 transition-all duration-300 group-hover:text-cyan-300 group-hover:scale-110">
         {icons[label]}
       </span>
-      <span className="text-[0.6rem] font-medium uppercase tracking-[0.15em] text-slate-500 group-hover:text-violet-400 transition-colors duration-300">
+      <span className="text-[0.6rem] font-medium uppercase tracking-[0.15em] text-slate-500 group-hover:text-cyan-400 transition-colors duration-300">
         {label}
       </span>
     </a>
@@ -88,7 +88,7 @@ function ContactForm() {
               onChange={handleChange}
               placeholder="Your name"
               className={[
-                "bg-slate-900/60 border border-white/8 rounded-xl px-4 py-2.5",
+                "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
                 "text-[0.9rem] text-white placeholder:text-slate-600",
                 "focus:outline-none focus:border-violet-500/50 focus:bg-violet-500/5",
                 "transition-all duration-200",
@@ -107,7 +107,7 @@ function ContactForm() {
               onChange={handleChange}
               placeholder="your@email.com"
               className={[
-                "bg-slate-900/60 border border-white/8 rounded-xl px-4 py-2.5",
+                "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
                 "text-[0.9rem] text-white placeholder:text-slate-600",
                 "focus:outline-none focus:border-violet-500/50 focus:bg-violet-500/5",
                 "transition-all duration-200",
@@ -129,7 +129,7 @@ function ContactForm() {
             onChange={handleChange}
             placeholder="Tell me about your project or idea..."
             className={[
-              "bg-slate-900/60 border border-white/8 rounded-xl px-4 py-2.5",
+              "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
               "text-[0.9rem] text-white placeholder:text-slate-600 resize-none",
               "focus:outline-none focus:border-violet-500/50 focus:bg-violet-500/5",
               "transition-all duration-200",
@@ -142,9 +142,10 @@ function ContactForm() {
           type="submit"
           className={[
             "mt-1 self-end flex items-center gap-2 px-6 py-2.5 rounded-xl",
-            "bg-violet-600 hover:bg-violet-500 text-white text-[0.88rem] font-medium",
-            "transition-all duration-200 hover:-translate-y-0.5",
-            "hover:shadow-[0_6px_20px_rgba(139,92,246,0.35)]",
+            "bg-slate-900/72 text-white text-[0.88rem] font-medium",
+            "border border-white/10 transition-all duration-200 hover:-translate-y-0.5",
+            "hover:bg-violet-500/82 hover:border-violet-500/40",
+            "hover:shadow-[0_6px_20px_rgba(124,58,237,0.18)]",
             sent ? "opacity-60 pointer-events-none" : "",
           ].join(" ")}
         >
@@ -180,7 +181,7 @@ export default function Contact() {
           {/* Divider */}
           <div className="flex items-center gap-4 my-10 max-w-[520px] mx-auto">
             <div className="flex-1 h-px bg-white/8" />
-            <span className="text-slate-600 text-[0.75rem] uppercase tracking-[0.2em]">or find me on</span>
+            <span className="text-slate-500 text-[0.75rem] uppercase tracking-[0.2em]">or find me on</span>
             <div className="flex-1 h-px bg-white/8" />
           </div>
 

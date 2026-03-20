@@ -63,7 +63,8 @@ export default function Hero() {
             className="hero-seq mt-6 max-w-[640px] text-slate-400 text-[1.08rem] xs:text-center leading-[1.9]"
             style={{ animationDelay: "0.72s" }}
           >
-            I'm <strong className="text-white">{name}</strong>,{" "}
+            {/* I'm <strong className="text-white">{name}</strong>, */}
+            {" "}
             {description.replace(`I'm ${name}, `, "").replace(`I'm ${name},`, "")}
           </p>
 

@@ -7,7 +7,7 @@ export const heroData = {
   name: "Yadri Amtsal",
   status: "Open to opportunities",
   roles: ["Software Engineer", "Fullstack Web Developer"],
-  tagline: "Hello World",
+  tagline: "Hi World! I'm Yadri Amsal",
   description:
     "I'm a developer focused on crafting responsive interfaces and solving real problems through code. I care about clean design, sharp user experience, and projects that feel alive.",
   cvLink: "#",
