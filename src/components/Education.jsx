@@ -42,7 +42,7 @@ export default function Education() {
 
         {/* Heading */}
         <div ref={headingRef} className="reveal max-w-[720px] mx-auto mb-14 text-center">
-          <p className="text-cyan-400 text-[0.82rem] uppercase tracking-[0.28em]">Background</p>
+          <p className="text-cyan-400 text-[1rem] uppercase tracking-[0.28em]">Background</p>
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Education &amp; Courses</h2>
           <p className="mt-3.5 text-slate-400">A quick look at the academic and practical foundation behind my work.</p>
         </div>

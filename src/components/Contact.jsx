@@ -77,7 +77,7 @@ function ContactForm() {
         {/* Name + Email row */}
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.72rem] uppercase tracking-[0.18em] text-slate-500">
+            <label className="text-[1rem] uppercase tracking-[0.18em] text-slate-500">
               Name
             </label>
             <input
@@ -89,14 +89,14 @@ function ContactForm() {
               placeholder="Your name"
               className={[
                 "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
-                "text-[0.9rem] text-white placeholder:text-slate-600",
+                "text-[1rem] text-white placeholder:text-slate-600",
                 "focus:outline-none focus:border-violet-500/50 focus:bg-violet-500/5",
                 "transition-all duration-200",
               ].join(" ")}
             />
           </div>
           <div className="flex flex-col gap-1.5">
-            <label className="text-[0.72rem] uppercase tracking-[0.18em] text-slate-500">
+            <label className="text-[1rem] uppercase tracking-[0.18em] text-slate-500">
               Email
             </label>
             <input
@@ -108,7 +108,7 @@ function ContactForm() {
               placeholder="your@email.com"
               className={[
                 "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
-                "text-[0.9rem] text-white placeholder:text-slate-600",
+                "text-[1rem] text-white placeholder:text-slate-600",
                 "focus:outline-none focus:border-violet-500/50 focus:bg-violet-500/5",
                 "transition-all duration-200",
               ].join(" ")}
@@ -118,7 +118,7 @@ function ContactForm() {
 
         {/* Message */}
         <div className="flex flex-col gap-1.5">
-          <label className="text-[0.72rem] uppercase tracking-[0.18em] text-slate-500">
+          <label className="text-[1rem] uppercase tracking-[0.18em] text-slate-500">
             Message
           </label>
           <textarea
@@ -130,7 +130,7 @@ function ContactForm() {
             placeholder="Tell me about your project or idea..."
             className={[
               "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
-              "text-[0.9rem] text-white placeholder:text-slate-600 resize-none",
+              "text-[1rem] text-white placeholder:text-slate-600 resize-none",
               "focus:outline-none focus:border-violet-500/50 focus:bg-violet-500/5",
               "transition-all duration-200",
             ].join(" ")}
@@ -170,7 +170,7 @@ export default function Contact() {
         <div className="w-[min(860px,calc(100%-48px))] mx-auto text-center">
 
           <div ref={headingRef} className="reveal max-w-[720px] mx-auto mb-12">
-            <p className="text-violet-300 text-[0.82rem] uppercase tracking-[0.28em]">Contact</p>
+            <p className="text-violet-300 text-[1rem] uppercase tracking-[0.28em]">Contact</p>
             <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Let's Build Something Better</h2>
             <p className="mt-3.5 text-slate-400">If you want someone who cares about both code and presentation, let's talk.</p>
           </div>
@@ -181,7 +181,7 @@ export default function Contact() {
           {/* Divider */}
           <div className="flex items-center gap-4 my-10 max-w-[520px] mx-auto">
             <div className="flex-1 h-px bg-white/8" />
-            <span className="text-slate-500 text-[0.75rem] uppercase tracking-[0.2em]">or find me on</span>
+            <span className="text-slate-500 text-[1rem] uppercase tracking-[0.2em]">or find me on</span>
             <div className="flex-1 h-px bg-white/8" />
           </div>
 

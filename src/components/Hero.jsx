@@ -42,7 +42,7 @@ export default function Hero() {
           {/* Eyebrow */}
           <p
             ref={addSeq}
-            className="hero-seq mt-4.5 text-cyan-400 uppercase tracking-[0.3em] text-[0.82rem]"
+            className="hero-seq mt-4.5 text-cyan-400 uppercase tracking-[0.3em] text-[1rem]"
             style={{ animationDelay: "0.35s" }}
           >
             {roles.join(" • ")}
@@ -51,7 +51,7 @@ export default function Hero() {
           {/* H1 */}
           <h1
             ref={addSeq}
-            className="hero-seq mt-3.5 text-[clamp(2.5rem,5vw,4.6rem)] leading-[1.08] max-w-[760px]"
+            className="hero-seq mt-3.5 text-[clamp(2.5rem,5vw,4.5rem)] leading-[1.08] max-w-[760px]"
             style={{ animationDelay: "0.5s" }}
           >
             {tagline}
@@ -60,10 +60,10 @@ export default function Hero() {
           {/* Description */}
           <p
             ref={addSeq}
-            className="hero-seq mt-6 max-w-[640px] text-slate-400 text-[1.08rem] xs:text-center leading-[1.9]"
+            className="hero-seq mt-6 max-w-[640px] text-slate-400 text-[1rem] xs:text-center leading-[1.9]"
             style={{ animationDelay: "0.72s" }}
           >
-            {/* I'm <strong className="text-white">{name}</strong>, */}
+            I'm <strong className="text-white">{name}</strong>,
             {" "}
             {description.replace(`I'm ${name}, `, "").replace(`I'm ${name},`, "")}
           </p>

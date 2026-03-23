@@ -7,7 +7,7 @@ export const heroData = {
   name: "Yadri Amtsal",
   status: "Open to opportunities",
   roles: ["Software Engineer", "Fullstack Web Developer"],
-  tagline: "Hi World! I'm Yadri Amsal",
+  tagline: "Hello World!",
   description:
     "I'm a developer focused on crafting responsive interfaces and solving real problems through code. I care about clean design, sharp user experience, and projects that feel alive.",
   cvLink: "#",
@@ -66,7 +66,7 @@ export const skillsData = [
 
 export const projectsData = [
   {
-    tag: "Featured",
+    tag: "Web App",
     title: "Chill",
     description: "Streaming platform concept with a modern cinematic interface.",
     image: "https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=1200&q=80",
@@ -75,7 +75,7 @@ export const projectsData = [
     repoUrl: "#",
   },
   {
-    tag: "UI Focus",
+    tag: "Web App",
     title: "To-Do List",
     description: "Minimal productivity app focused on clarity, speed, and clean interaction.",
     image: "https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?auto=format&fit=crop&w=1200&q=80",

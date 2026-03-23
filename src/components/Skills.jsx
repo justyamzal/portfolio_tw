@@ -3,6 +3,29 @@
 // ============================================================
 import { skillsData } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
+import { FaHtml5, FaCss3, FaJs, FaPhp, FaPython, FaJava, FaReact, FaBootstrap, FaNodeJs, FaGitAlt, FaFigma, FaDocker, FaDatabase, FaCode, FaToolbox } from "react-icons/fa";
+
+// Mapping skill name → icon (only using available fa icons)
+const skillIcons = {
+  "HTML + CSS":  <FaHtml5    size={14} />,
+  "JavaScript":  <FaJs       size={14} />,
+  "PHP":         <FaPhp      size={14} />,
+  "Python":      <FaPython   size={14} />,
+  "Java":        <FaJava     size={14} />,
+  "React":       <FaReact    size={14} />,
+  "Tailwind":    <FaCss3     size={14} />,        // Using CSS as alternative
+  "Bootstrap":   <FaBootstrap size={14} />,
+  "Node.js":     <FaNodeJs   size={14} />,
+  "Express":     <FaCode     size={14} />,        // Using Code as alternative
+  "MySQL":       <FaDatabase size={14} />,
+  "MongoDB":     <FaDatabase size={14} />,        // Using Database as alternative
+  "PostgreSQL":  <FaDatabase size={14} />,        // Using Database as alternative
+  "Git":         <FaGitAlt   size={14} />,
+  "Figma":       <FaFigma    size={14} />,
+  "Docker":      <FaDocker   size={14} />,
+  "Postman":     <FaToolbox  size={14} />,        // Using Toolbox as alternative
+  "Jest":        <FaCode     size={14} />,        // Using Code as alternative
+};
 
 function SkillCard({ title, tags }) {
   const ref = useScrollReveal();
@@ -26,8 +49,12 @@ function SkillCard({ title, tags }) {
               "border border-white/8 bg-white/4",
               "transition-all duration-300",
               "hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/10",
+              "flex items-center gap-2",
             ].join(" ")}
           >
+            {skillIcons[tag] && (
+              <span className="text-cyan-400">{skillIcons[tag]}</span>
+            )}
             {tag}
           </span>
         ))}
@@ -44,7 +71,7 @@ export default function Skills() {
       <div className="w-[min(1180px,calc(100%-48px))] mx-auto">
 
         <div ref={headingRef} className="reveal max-w-[720px] mx-auto mb-14 text-center">
-          <p className="text-violet-300 text-[0.82rem] uppercase tracking-[0.28em]">Capabilities</p>
+          <p className="text-violet-300 text-[1rem] uppercase tracking-[0.28em]">Capabilities</p>
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Skills That Power My Work</h2>
         </div>
 

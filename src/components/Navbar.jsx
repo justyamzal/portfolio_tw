@@ -96,7 +96,7 @@ export default function Navbar({ isFloating, activeSection }) {
                   key={label}
                   href={href}
                   className={[
-                    "nav-link-item text-[0.95rem] transition-colors duration-300",
+                    "nav-link-item text-[1rem] transition-colors duration-300",
                     isFloating
                       ? active
                         ? "text-slate-900"

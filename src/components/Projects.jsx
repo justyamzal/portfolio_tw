@@ -5,6 +5,18 @@
 // ============================================================
 import { projectsData } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
+import { FaHtml5, FaCss3, FaJs, FaReact, FaNodeJs } from "react-icons/fa";
+
+// Mapping stack name → icon (same as Skills)
+const stackIcons = {
+  "HTML":      <FaHtml5  size={12} />,
+  "CSS":       <FaCss3   size={12} />,
+  "JavaScript": <FaJs    size={12} />,
+  "React":     <FaReact  size={12} />,
+  "Tailwind":  <FaCss3   size={12} />,
+  "Node.js":   <FaNodeJs size={12} />,
+  "Express":   <FaNodeJs size={12} />,
+};
 
 function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }) {
   const ref = useScrollReveal();
@@ -47,8 +59,9 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
           {stack.map((s) => (
             <span
               key={s}
-              className="px-3 py-1.5 rounded-full text-[0.82rem] text-slate-300 bg-white/4 border border-white/8"
+              className="px-3 py-1.5 rounded-full text-[0.82rem] text-slate-300 bg-white/4 border border-white/8 flex items-center gap-1.5"
             >
+              {stackIcons[s] && <span className="text-cyan-400">{stackIcons[s]}</span>}
               {s}
             </span>
           ))}
@@ -94,7 +107,7 @@ export default function Projects() {
       <div className="w-[min(1180px,calc(100%-48px))] mx-auto">
 
         <div ref={headingRef} className="reveal max-w-[720px] mx-auto mb-14 text-center">
-          <p className="text-cyan-400 text-[0.82rem] uppercase tracking-[0.28em]">Portfolio</p>
+          <p className="text-cyan-400 text-[1rem] uppercase tracking-[0.28em]">Projects</p>
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Selected Projects</h2>
           <p className="mt-3.5 text-slate-400">These are the projects that best show how I think, build, and design.</p>
         </div>
