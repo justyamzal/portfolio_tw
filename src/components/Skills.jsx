@@ -35,13 +35,13 @@ function SkillCard({ title, tags }) {
       ref={ref}
       className={[
         "reveal border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
-        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)] p-5",
+        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)] p-6",
         "transition-all duration-300 hover:-translate-y-2",
         "hover:border-violet-500/26 hover:shadow-[0_18px_45px_rgba(124,58,237,0.12)]",
       ].join(" ")}
     >
       <h3 className="text-[1.4rem] font-bold mb-4">{title}</h3>
-      <div className="grid grid-cols-2 gap-2.5">
+      <div className="flex flex-wrap gap-2.5">
         {tags.map((tag, index) => {
           const icon = skillIcons[tag.icon] || <Circle size={12} className="text-cyan-400" />;
           return (
@@ -71,7 +71,7 @@ export default function Skills() {
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Skills That Power My Work</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {skillsData.map((skill) => (
             <SkillCard key={skill.title} {...skill} />
           ))}
