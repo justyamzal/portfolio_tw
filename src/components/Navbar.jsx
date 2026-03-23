@@ -81,37 +81,37 @@ export default function Navbar({ isFloating, activeSection }) {
             ))}
           </button>
 
-          {/* Nav links — desktop */}
-          <nav
-            className={[
-              "hidden md:flex transition-all duration-300",
-              isFloating ? "gap-5 justify-center" : "gap-8",
-            ].join(" ")}
-          >
-            {navLinks.map(({ label, href }) => {
-              const id = href.replace("#", "");
-              const active = activeSection === id;
-              return (
-                <a
-                  key={label}
-                  href={href}
-                  className={[
-                    "nav-link-item text-[1rem] transition-colors duration-300",
-                    isFloating
-                      ? active
-                        ? "text-violet-400"
-                        : "text-white/80 hover:text-white"
-                      : active
-                      ? "text-white"
-                      : "text-slate-300 hover:text-white",
-                    active ? "active" : "",
-                  ].join(" ")}
-                >
-                  {label}
-                </a>
-              );
-            })}
-          </nav>
+            {/* Nav links — desktop */}
+            <nav
+              className={[
+                "hidden md:flex transition-all duration-300",
+                isFloating ? "gap-5 justify-center" : "gap-8",
+              ].join(" ")}
+            >
+              {navLinks.map(({ label, href }) => {
+                const id = href.replace("#", "");
+                const active = activeSection === id;
+                return (
+                  <a
+                    key={label}
+                    href={href}
+                    className={[
+                      "nav-link-item text-[1rem] transition-colors duration-300",
+                      isFloating
+                        ? active
+                          ? "text-violet-400"
+                          : "text-white/80 hover:text-white"
+                        : active
+                        ? "text-white"
+                        : "text-slate-300 hover:text-white",
+                      active ? "active" : "",
+                    ].join(" ")}
+                  >
+                    {label}
+                  </a>
+                );
+              })}
+            </nav>
         </div>
 
         {/* Mobile dropdown */}

@@ -1,6 +1,7 @@
 // ============================================================
 //  Education.jsx — full Tailwind v4
 // ============================================================
+import { GraduationCap, Rocket } from "lucide-react";
 import { educationData } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
 
@@ -12,16 +13,17 @@ const cardCls = [
   "hover:border-violet-500/30 hover:shadow-[0_18px_50px_rgba(124,58,237,0.15)]",
 ].join(" ");
 
-function IconBadge({ icon, variant }) {
+function IconBadge({ iconType, variant }) {
   const styles = {
-    violet: "bg-violet-500/15 text-violet-300",
-    cyan:   "bg-cyan-400/15   text-cyan-300",
+    violet: "bg-violet-500/20 text-violet-400",
+    cyan:   "bg-cyan-400/20   text-cyan-400",
   };
+  const Icon = iconType === "graduation" ? GraduationCap : Rocket;
   return (
     <div
       className={`inline-flex items-center justify-center w-[52px] h-[52px] rounded-[18px] mb-4.5 text-[1.4rem] ${styles[variant]}`}
     >
-      {icon}
+      <Icon className="w-7 h-7" />
     </div>
   );
 }
@@ -51,7 +53,7 @@ export default function Education() {
 
           {/* Academic */}
           <article ref={card1Ref} className={`reveal ${cardCls}`}>
-            <IconBadge icon={academic.icon} variant={academic.iconVariant} />
+            <IconBadge iconType="graduation" variant={academic.iconVariant} />
             <h3 className="text-[1.7rem] font-bold mb-5">{academic.title}</h3>
             <p className="font-semibold">{academic.institution}</p>
             <p className="text-slate-400">{academic.degree}</p>
@@ -62,7 +64,7 @@ export default function Education() {
 
           {/* Courses */}
           <article ref={card2Ref} className={`reveal ${cardCls}`}>
-            <IconBadge icon={courses.icon} variant={courses.iconVariant} />
+            <IconBadge iconType="rocket" variant={courses.iconVariant} />
             <h3 className="text-[1.7rem] font-bold mb-5">{courses.title}</h3>
             {courses.items.map((c, i) => (
               <div key={i} className={i > 0 ? "mt-5" : ""}>

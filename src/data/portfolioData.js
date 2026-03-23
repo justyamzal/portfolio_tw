@@ -17,7 +17,7 @@ export const heroData = {
 
 export const educationData = {
   academic: {
-    icon: "🎓",
+    icon: null,
     iconVariant: "violet",
     title: "Education",
     institution: "Polytechnic State of Jember",
@@ -25,7 +25,7 @@ export const educationData = {
     gpa: "3.69 / 4.00",
   },
   courses: {
-    icon: "🚀",
+    icon: null,
     iconVariant: "cyan",
     title: "Courses",
     items: [
