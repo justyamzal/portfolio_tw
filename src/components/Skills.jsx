@@ -35,7 +35,7 @@ function SkillCard({ title, tags }) {
       ref={ref}
       className={[
         "reveal border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
-        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)] p-4",
+        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)] p-5",
         "transition-all duration-300 hover:-translate-y-2",
         "hover:border-violet-500/26 hover:shadow-[0_18px_45px_rgba(124,58,237,0.12)]",
       ].join(" ")}
