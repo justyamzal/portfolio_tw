@@ -3,6 +3,7 @@
 // ============================================================
 import { skillsData } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
+import { Circle } from "lucide-react";
 import { FaHtml5, FaCss3, FaJs, FaPhp, FaPython, FaJava, FaReact, FaBootstrap, FaNodeJs, FaGitAlt, FaFigma, FaDocker, FaDatabase, FaCode, FaToolbox } from "react-icons/fa";
 
 // Mapping skill name → icon (only using available fa icons)
@@ -34,30 +35,25 @@ function SkillCard({ title, tags }) {
       ref={ref}
       className={[
         "reveal border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
-        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)] p-8",
+        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)] p-4",
         "transition-all duration-300 hover:-translate-y-2",
         "hover:border-violet-500/26 hover:shadow-[0_18px_45px_rgba(124,58,237,0.12)]",
       ].join(" ")}
     >
-      <h3 className="text-[1.7rem] font-bold mb-5">{title}</h3>
-      <div className="flex flex-wrap gap-3">
-        {tags.map((tag) => (
-          <span
-            key={tag}
-            className={[
-              "px-4 py-2.5 rounded-full text-[0.95rem] text-slate-200",
-              "border border-white/8 bg-white/4",
-              "transition-all duration-300",
-              "hover:-translate-y-1 hover:border-cyan-400/40 hover:bg-cyan-400/10",
-              "flex items-center gap-2",
-            ].join(" ")}
-          >
-            {skillIcons[tag] && (
-              <span className="text-cyan-400">{skillIcons[tag]}</span>
-            )}
-            {tag}
-          </span>
-        ))}
+      <h3 className="text-[1.4rem] font-bold mb-4">{title}</h3>
+      <div className="grid grid-cols-2 gap-2.5">
+        {tags.map((tag, index) => {
+          const icon = skillIcons[tag.icon] || <Circle size={12} className="text-cyan-400" />;
+          return (
+            <span
+              key={`${tag.name}-${index}`}
+              className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[1rem] text-slate-200 border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-cyan-400/10"
+            >
+              <span className="text-cyan-400">{icon}</span>
+              {tag.name}
+            </span>
+          );
+        })}
       </div>
     </article>
   );
@@ -75,7 +71,7 @@ export default function Skills() {
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Skills That Power My Work</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {skillsData.map((skill) => (
             <SkillCard key={skill.title} {...skill} />
           ))}

@@ -48,19 +48,41 @@ export const educationData = {
 export const skillsData = [
   {
     title: "Programming Language",
-    tags: ["HTML + CSS", "JavaScript", "PHP", "Python", "Java"],
+    tags: [
+      { name: "HTML, CSS", icon: "HTML + CSS" },
+      { name: "JavaScript", icon: "JavaScript" },
+      { name: "PHP", icon: "PHP" },
+      { name: "Python", icon: "Python" },
+      { name: "Java", icon: "Java" },
+    ],
   },
   {
     title: "Frameworks & Libraries",
-    tags: ["React", "Tailwind", "Bootstrap", "Node.js", "Express"],
+    tags: [
+      { name: "React", icon: "React" },
+      { name: "Tailwind", icon: "Tailwind" },
+      { name: "Bootstrap", icon: "Bootstrap" },
+      { name: "Node.js", icon: "Node.js" },
+      { name: "Express", icon: "Express" },
+    ],
   },
   {
     title: "Backend & Database",
-    tags: ["MySQL", "MongoDB", "PostgreSQL"],
+    tags: [
+      { name: "MySQL", icon: "MySQL" },
+      { name: "MongoDB", icon: "MongoDB" },
+      { name: "PostgreSQL", icon: "PostgreSQL" },
+    ],
   },
   {
     title: "Tools",
-    tags: ["Git", "Figma", "Docker", "Postman", "Jest"],
+    tags: [
+      { name: "Git", icon: "Git" },
+      { name: "Figma", icon: "Figma" },
+      { name: "Docker", icon: "Docker" },
+      { name: "Postman", icon: "Postman" },
+      { name: "Jest", icon: "Jest" },
+    ],
   },
 ];
 
