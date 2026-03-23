@@ -10,12 +10,12 @@ export default function Navbar({ isFloating, activeSection }) {
 
   return (
     <header
-      className={["sticky top-0 z-50 transition-all duration-300", 
+      className={["sticky top-0 z-50 transition-colors duration-300", 
         isFloating ? "py-0" : "",].join(" ")}>
       {/* Shell — shrinks when floating */}
       <div
         className={[
-          "mx-auto transition-all duration-300",
+          "mx-auto transition-[width] duration-300",
           isFloating
             ? "w-[min(520px,calc(100%-32px))] pt-3.5"
             : "w-[min(1180px,calc(100%-48px))]",
@@ -24,11 +24,11 @@ export default function Navbar({ isFloating, activeSection }) {
         {/* Inner bar */}
         <div
           className={[
-            "flex items-center justify-between transition-all duration-300",
+            "flex items-center justify-between transition-[min-height,border,border-radius] duration-300",
             isFloating
               ? [
                   "min-h-[62px] px-4 rounded-full justify-center",
-                  "bg-white/90 backdrop-blur-lg",
+                  "bg-white/10 backdrop-blur-lg",
                   "shadow-[0_14px_35px_rgba(2,6,23,0.28)]",
                 ].join(" ")
               : "min-h-[78px] border-b border-white/8",
@@ -99,8 +99,8 @@ export default function Navbar({ isFloating, activeSection }) {
                     "nav-link-item text-[1rem] transition-colors duration-300",
                     isFloating
                       ? active
-                        ? "text-slate-900"
-                        : "text-slate-500 hover:text-slate-900"
+                        ? "text-violet-400"
+                        : "text-white/80 hover:text-white"
                       : active
                       ? "text-white"
                       : "text-slate-300 hover:text-white",
@@ -139,8 +139,8 @@ export default function Navbar({ isFloating, activeSection }) {
                     "transition-colors duration-200",
                     isFloating
                       ? active
-                        ? "text-slate-900"
-                        : "text-slate-500 hover:text-slate-900"
+                        ? "text-violet-400"
+                        : "text-white/80 hover:text-white"
                       : active
                       ? "text-white"
                       : "text-slate-300 hover:text-white",
