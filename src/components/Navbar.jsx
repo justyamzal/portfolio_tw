@@ -122,7 +122,7 @@ export default function Navbar({ isFloating, activeSection }) {
               "flex flex-col gap-0 p-4 rounded-2xl",
               "border border-white/12 backdrop-blur-lg",
               isFloating
-                ? "bg-white/95 border-violet-300/30"
+                ? "bg-white/10 backdrop-blur-lg border-violet-300/30"
                 : "bg-slate-900/95",
             ].join(" ")}
           >

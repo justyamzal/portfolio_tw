@@ -49,7 +49,7 @@ export default function Education() {
           <p className="mt-3.5 text-slate-400">A quick look at the academic and practical foundation behind my work.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-[48px]">
 
           {/* Academic */}
           <article ref={card1Ref} className={`reveal ${cardCls}`}>
@@ -66,13 +66,16 @@ export default function Education() {
           <article ref={card2Ref} className={`reveal ${cardCls}`}>
             <IconBadge iconType="rocket" variant={courses.iconVariant} />
             <h3 className="text-[1.7rem] font-bold mb-5">{courses.title}</h3>
-            {courses.items.map((c, i) => (
-              <div key={i} className={i > 0 ? "mt-5" : ""}>
-                <p className="font-semibold">{c.name}</p>
-                <p className="text-slate-400">{c.provider} • {c.location}</p>
-                <p className="text-slate-400 text-[0.92rem] mt-1">{c.period}</p>
-              </div>
+            <ul className="mt-4 space-y-4">
+              {courses.items.map((c, i) => (
+                <li key={i} className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-cyan-400">
+                    <p className="font-semibold text-white">{c.name}</p>
+                    <p className="text-slate-400">{c.provider} • {c.location}</p>
+                    <p className="text-slate-400 text-[0.92rem] mt-1">{c.period}</p>
+              </li>
             ))}
+            </ul>
+
           </article>
 
         </div>
