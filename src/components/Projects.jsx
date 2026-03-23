@@ -32,7 +32,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
       ].join(" ")}
     >
       {/* Image area — ::after overlay lives in globals.css */}
-      <div className="project-image relative h-[225px] overflow-hidden">
+      <div className="project-image relative h-[215px] overflow-hidden">
         <span
           className={[
             "absolute z-[2] left-4 top-4 px-3 py-1.5 rounded-full text-[0.82rem]",
