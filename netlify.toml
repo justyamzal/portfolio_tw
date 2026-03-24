@@ -1,0 +1,9 @@
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_ENV = "development"
+  NPM_FLAGS = "--include=dev"
+
+# optional: clear Netlify cache on failure, but must be done in UI via "Clear cache and deploy".
