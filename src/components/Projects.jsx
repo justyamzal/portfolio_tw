@@ -25,18 +25,18 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
       ref={ref}
       className={[
         "reveal overflow-hidden group",
-        "border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
-        "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)]",
+        "border border-white/8 bg-slate-900/72 backdrop-blur-lg",
+        "rounded-[24px] shadow-card",
         "transition-all duration-300 hover:-translate-y-2",
         "hover:border-violet-500/30 hover:shadow-[0_20px_60px_rgba(124,58,237,0.15)]",
       ].join(" ")}
     >
       {/* Image area — ::after overlay lives in globals.css */}
-      <div className="project-image relative h-[215px] overflow-hidden">
+      <div className="project-image relative h-53.75 overflow-hidden">
         <span
           className={[
-            "absolute z-[2] left-4 top-4 px-3 py-1.5 rounded-full text-[0.82rem]",
-            "border border-white/10 bg-slate-900/80 backdrop-blur-[12px]",
+            "absolute z-2 left-4 top-4 px-3 py-1.5 rounded-full text-[0.82rem]",
+            "border border-white/10 bg-slate-900/80 backdrop-blur-md",
           ].join(" ")}
         >
           {tag}
@@ -74,7 +74,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
             target="_blank"
             rel="noreferrer"
             className={[
-              "px-4 py-2.5 rounded-[12px] text-[0.92rem] text-center",
+              "px-4 py-2.5 rounded-xl text-[0.92rem] text-center",
               "bg-white/10 transition-all duration-300",
               "hover:-translate-y-0.5 hover:bg-violet-500/82",
             ].join(" ")}
@@ -86,7 +86,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
             target="_blank"
             rel="noreferrer"
             className={[
-              "px-4 py-2.5 rounded-[12px] text-[0.92rem] text-center",
+              "px-4 py-2.5 rounded-xl text-[0.92rem] text-center",
               "border border-white/10 transition-all duration-300",
               "hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-white/4",
             ].join(" ")}
@@ -103,10 +103,10 @@ export default function Projects() {
   const headingRef = useScrollReveal();
 
   return (
-    <section id="projects" className="py-[100px] bg-white/[0.03] border-y border-white/5">
+    <section id="projects" className="py-25 bg-white/3 border-y border-white/5">
       <div className="w-[min(1180px,calc(100%-48px))] mx-auto">
 
-        <div ref={headingRef} className="reveal max-w-[720px] mx-auto mb-14 text-center">
+        <div ref={headingRef} className="reveal max-w-180 mx-auto mb-14 text-center">
           <p className="text-cyan-400 text-[1rem] uppercase tracking-[0.28em]">Projects</p>
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Selected Projects</h2>
           <p className="mt-3.5 text-slate-400">These are the projects that best show how I think, build, and design.</p>

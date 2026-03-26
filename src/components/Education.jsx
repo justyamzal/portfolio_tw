@@ -21,7 +21,7 @@ function IconBadge({ iconType, variant }) {
   const Icon = iconType === "graduation" ? GraduationCap : Rocket;
   return (
     <div
-      className={`inline-flex items-center justify-center w-[52px] h-[52px] rounded-[18px] mb-4.5 text-[1.4rem] ${styles[variant]}`}
+      className={`inline-flex items-center justify-center w-13 h-13 rounded-[18px] mb-4.5 text-[1.4rem] ${styles[variant]}`}
     >
       <Icon className="w-7 h-7" />
     </div>
@@ -38,18 +38,18 @@ export default function Education() {
   return (
     <section
       id="education"
-      className="py-[100px] bg-white/[0.03] border-y border-white/5"
+      className="py-25 bg-white/3 border-y border-white/5"
     >
       <div className="w-[min(1180px,calc(100%-48px))] mx-auto">
 
         {/* Heading */}
-        <div ref={headingRef} className="reveal max-w-[720px] mx-auto mb-14 text-center">
+        <div ref={headingRef} className="reveal max-w-180 mx-auto mb-14 text-center">
           <p className="text-cyan-400 text-[1rem] uppercase tracking-[0.28em]">Background</p>
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Education &amp; Courses</h2>
           <p className="mt-3.5 text-slate-400">A quick look at the academic and practical foundation behind my work.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-[48px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-12">
 
           {/* Academic */}
           <article ref={card1Ref} className={`reveal ${cardCls}`}>
