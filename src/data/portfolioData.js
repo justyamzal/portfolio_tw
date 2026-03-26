@@ -48,6 +48,7 @@ export const educationData = {
 export const skillsData = [
   {
     title: "Programming Language",
+    icon: "terminal",
     tags: [
       { name: "HTML, CSS", icon: "HTML + CSS" },
       { name: "JavaScript", icon: "JavaScript" },
@@ -58,6 +59,7 @@ export const skillsData = [
   },
   {
     title: "Frameworks & Libraries",
+    icon: "layers",
     tags: [
       { name: "React", icon: "React" },
       { name: "Tailwind", icon: "Tailwind" },
@@ -68,6 +70,7 @@ export const skillsData = [
   },
   {
     title: "Backend & Database",
+    icon: "database",
     tags: [
       { name: "MySQL", icon: "MySQL" },
       { name: "MongoDB", icon: "MongoDB" },
@@ -76,6 +79,7 @@ export const skillsData = [
   },
   {
     title: "Tools",
+    icon: "wrench",
     tags: [
       { name: "Git", icon: "Git" },
       { name: "Figma", icon: "Figma" },

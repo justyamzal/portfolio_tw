@@ -3,7 +3,7 @@
 // ============================================================
 import { skillsData } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
-import { Circle } from "lucide-react";
+import { Circle, Terminal, Layers, Database, Wrench } from "lucide-react";
 import { FaHtml5, FaCss3, FaJs, FaPhp, FaPython, FaJava, FaReact, FaBootstrap, FaNodeJs, FaGitAlt, FaFigma, FaDocker, FaDatabase, FaCode, FaToolbox } from "react-icons/fa";
 
 // Mapping skill name → icon (only using available fa icons)
@@ -28,8 +28,17 @@ const skillIcons = {
   "Jest":        <FaCode     size={14} />,        // Using Code as alternative
 };
 
-function SkillCard({ title, tags }) {
+// Mapping card title → icon (lucide)
+const cardIcons = {
+  terminal:   <Terminal   size={24} className="text-white" />,
+  layers:    <Layers     size={24} className="text-white" />,
+  database:  <Database   size={24} className="text-white" />,
+  wrench:    <Wrench     size={24} className="text-white" />,
+};
+
+function SkillCard({ title, tags, icon }) {
   const ref = useScrollReveal();
+  const cardIcon = cardIcons[icon];
   return (
     <article
       ref={ref}
@@ -40,7 +49,10 @@ function SkillCard({ title, tags }) {
         "hover:border-violet-500/26 hover:shadow-[0_18px_45px_rgba(124,58,237,0.12)]",
       ].join(" ")}
     >
-      <h3 className="text-[1.4rem] font-bold mb-4">{title}</h3>
+      <div className="flex items-center gap-3 mb-4">
+        {cardIcon}
+        <h3 className="text-[1.4rem] font-bold">{title}</h3>
+      </div>
       <div className="flex flex-wrap gap-2.5">
         {tags.map((tag, index) => {
           const icon = skillIcons[tag.icon] || <Circle size={12} className="text-cyan-400" />;
@@ -49,7 +61,7 @@ function SkillCard({ title, tags }) {
               key={`${tag.name}-${index}`}
               className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-[1rem] text-slate-200 border border-white/10 bg-white/5 transition-all duration-300 hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-cyan-400/10"
             >
-              <span className="text-cyan-400">{icon}</span>
+              <span className="text-white-400">{icon}</span>
               {tag.name}
             </span>
           );

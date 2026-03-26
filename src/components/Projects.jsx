@@ -61,7 +61,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
               key={s}
               className="px-3 py-1.5 rounded-full text-[0.82rem] text-slate-300 bg-white/4 border border-white/8 flex items-center gap-1.5"
             >
-              {stackIcons[s] && <span className="text-cyan-400">{stackIcons[s]}</span>}
+              {stackIcons[s] && <span className="text-white-400">{stackIcons[s]}</span>}
               {s}
             </span>
           ))}
