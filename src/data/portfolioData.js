@@ -10,7 +10,7 @@ export const heroData = {
   tagline: "Hello World!",
   description:
     "I'm a developer focused on crafting responsive interfaces and solving real problems through code. I care about clean design, sharp user experience, and projects that feel alive.",
-  cvLink: "#",
+  cvLink: "https://drive.google.com/uc?export=download&id=121cLw8GvYGcT2hUaZbft9wTQOS-dMoMn",
   profileImage: "/images/profile_crosshanded.png",
   profileTag: "Frontend • Backend",
 };
