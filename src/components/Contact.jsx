@@ -33,14 +33,14 @@ function ContactTile({ label, href }) {
         "border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
         "rounded-xl p-4 w-[100px] h-[100px]",
         "transition-all duration-300 hover:-translate-y-1 hover:scale-[1.08]",
-        "hover:border-cyan-400/40 hover:shadow-[0_6px_24px_rgba(34,211,238,0.12)]",
-        "hover:bg-cyan-400/10",
+        "hover:border-violet-400/40 hover:shadow-[0_6px_24px_rgba(34,211,238,0.12)]",
+        "hover:bg-violet-400/10",
       ].join(" ")}
     >
-      <span className="text-white-400 transition-all duration-300 group-hover:text-cyan-300 group-hover:scale-110">
+      <span className="text-white-400 transition-all duration-300 group-hover:text-white-300 group-hover:scale-110">
         {icons[label]}
       </span>
-      <span className="text-[0.6rem] font-medium uppercase tracking-[0.15em] text-slate-500 group-hover:text-cyan-400 transition-colors duration-300">
+      <span className="text-[0.6rem] font-medium uppercase tracking-[0.15em] text-slate-500 group-hover:text-violet-400 transition-colors duration-300">
         {label}
       </span>
     </a>
@@ -186,7 +186,7 @@ export default function Contact() {
           <ContactForm />
 
           {/* Divider */}
-          <div className="flex items-center gap-4 my-10 max-w-[520px] mx-auto">
+          <div className="flex items-center gap-4 my-7 max-w-[520px] mx-auto">
             <div className="flex-1 h-px bg-white/8" />
             <span className="text-slate-500 text-[1rem] uppercase tracking-[0.2em]">or find me on</span>
             <div className="flex-1 h-px bg-white/8" />
