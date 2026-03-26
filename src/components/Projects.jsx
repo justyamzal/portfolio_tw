@@ -24,7 +24,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
     <article
       ref={ref}
       className={[
-        "reveal overflow-hidden",
+        "reveal overflow-hidden group",
         "border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
         "rounded-[24px] shadow-[0_18px_50px_rgba(2,6,23,0.35)]",
         "transition-all duration-300 hover:-translate-y-2",
@@ -51,7 +51,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
 
       {/* Body */}
       <div className="p-5">
-        <h3 className="text-[1.4rem] font-bold mb-2.5">{title}</h3>
+        <h3 className="text-[1.4rem] font-bold mb-2.5 transition-colors duration-300">{title}</h3>
         <p className="text-slate-400 leading-[1.8]">{description}</p>
 
         {/* Stack pills */}
