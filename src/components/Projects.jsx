@@ -45,7 +45,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
           src={image}
           alt={title}
           loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+          className="w-full h-full object-cover transition-transform duration-700   group-hover:scale-110"
         />
       </div>
 
