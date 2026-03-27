@@ -22,7 +22,7 @@ export const educationData = {
     title: "Education",
     institution: "Polytechnic State of Jember",
     degree: "Bachelor of Informatics Engineering",
-    gpa: "3.69 / 4.00",
+    // gpa: "3.69 / 4.00",
   },
   courses: {
     icon: null,

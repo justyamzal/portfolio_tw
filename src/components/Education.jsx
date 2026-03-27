@@ -51,21 +51,27 @@ export default function Education() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6 px-12">
 
+          {/* Background */}
+          
           {/* Academic */}
           <article ref={card1Ref} className={`reveal ${cardCls}`}>
-            <IconBadge iconType="graduation" variant={academic.iconVariant} />
-            <h3 className="text-[1.7rem] font-bold mb-5">{academic.title}</h3>
+            <div className="flex items-center gap-4">
+              <IconBadge iconType="graduation" variant={academic.iconVariant} />
+              <h3 className="text-[1.7rem] font-bold mb-5">{academic.title}</h3>
+            </div>
             <p className="font-semibold">{academic.institution}</p>
             <p className="text-slate-400">{academic.degree}</p>
-            <span className="inline-block mt-2.5 px-3.5 py-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 text-[0.92rem]">
+            {/* <span className="inline-block mt-2.5 px-3.5 py-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 text-[0.92rem]">
               GPA: {academic.gpa}
-            </span>
+            </span> */}
           </article>
 
           {/* Courses */}
           <article ref={card2Ref} className={`reveal ${cardCls}`}>
+            <div className="flex items-center gap-4">
             <IconBadge iconType="rocket" variant={courses.iconVariant} />
             <h3 className="text-[1.7rem] font-bold mb-5">{courses.title}</h3>
+            </div>
             <ul className="mt-4 space-y-4">
               {courses.items.map((c, i) => (
                 <li key={i} className="relative pl-8 before:absolute before:left-0 before:top-1.5 before:h-2.5 before:w-2.5 before:rounded-full before:bg-cyan-400">
