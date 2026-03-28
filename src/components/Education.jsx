@@ -59,8 +59,8 @@ export default function Education() {
               <IconBadge iconType="graduation" variant={academic.iconVariant} />
               <h3 className="text-[1.7rem] font-bold mb-5">{academic.title}</h3>
             </div>
-            <p className="font-semibold">{academic.institution}</p>
-            <p className="text-slate-400">{academic.degree}</p>
+            <p className="font-semibold text-[1.25rem]">{academic.institution}</p>
+            <p className="text-slate-400 text-[1.25rem]">{academic.degree}</p>
             {/* <span className="inline-block mt-2.5 px-3.5 py-2 rounded-full border border-emerald-400/20 bg-emerald-400/10 text-emerald-300 text-[0.92rem]">
               GPA: {academic.gpa}
             </span> */}

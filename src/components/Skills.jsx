@@ -4,7 +4,7 @@
 import { skillsData } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
 import { Circle, Terminal, Layers, Database, Wrench } from "lucide-react";
-import { FaHtml5, FaCss3, FaJs, FaPhp, FaPython, FaJava, FaReact, FaBootstrap, FaNodeJs, FaGitAlt, FaFigma, FaDocker, FaDatabase, FaCode, FaToolbox } from "react-icons/fa";
+import { FaHtml5, FaCss3, FaJs, FaPhp, FaPython, FaJava, FaReact,FaVuejs, FaBootstrap, FaNodeJs, FaGitAlt, FaFigma, FaDocker, FaDatabase, FaCode, FaToolbox } from "react-icons/fa";
 
 // Mapping skill name → icon (only using available fa icons)
 const skillIcons = {
@@ -14,6 +14,7 @@ const skillIcons = {
   "Python":      <FaPython   size={14} />,
   "Java":        <FaJava     size={14} />,
   "React":       <FaReact    size={14} />,
+  "Vue":         <FaVuejs     size={14} />,
   "Tailwind":    <FaCss3     size={14} />,        // Using CSS as alternative
   "Bootstrap":   <FaBootstrap size={14} />,
   "Node.js":     <FaNodeJs   size={14} />,

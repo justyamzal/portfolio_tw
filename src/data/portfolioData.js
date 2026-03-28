@@ -63,6 +63,7 @@ export const skillsData = [
     tags: [
       { name: "React", icon: "React" },
       { name: "Tailwind", icon: "Tailwind" },
+      { name: "Vue", icon: "Vue" },
       { name: "Bootstrap", icon: "Bootstrap" },
       { name: "Node.js", icon: "Node.js" },
       { name: "Express", icon: "Express" },
