@@ -29,52 +29,48 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
         "rounded-[24px] shadow-card",
         "transition-all duration-300 hover:-translate-y-2",
         "hover:border-violet-500/30 hover:shadow-[0_20px_60px_rgba(124,58,237,0.15)]",
+        "flex flex-col md:flex-row",
       ].join(" ")}
     >
-      {/* Image area — ::after overlay lives in globals.css */}
-      <div className="project-image relative h-53.75 overflow-hidden">
-        <span
-          className={[
-            "absolute z-2 left-4 top-4 px-3 py-1.5 rounded-full text-[0.82rem]",
-            "border border-white/10 bg-slate-900/80 backdrop-blur-md",
-          ].join(" ")}
-        >
-          {tag}
-        </span>
-        <img
-          src={image}
-          alt={title}
-          loading="lazy"
-          className="w-full h-full object-cover transition-transform duration-700   group-hover:scale-110"
-        />
-      </div>
-
-      {/* Body */}
-      <div className="p-5">
-        <h3 className="text-[1.4rem] font-bold mb-2.5 transition-colors duration-300">{title}</h3>
-        <p className="text-slate-400 leading-[1.8]">{description}</p>
-
-        {/* Stack pills */}
-        <div className="flex flex-wrap gap-2 mt-4.5">
-          {stack.map((s) => (
+      {/* Body — Left side (desktop) / Top (mobile) */}
+      <div className="p-6 flex-1 flex flex-col justify-between order-2 md:order-1">
+        <div>
+          <div className="inline-flex items-center gap-2 mb-3">
             <span
-              key={s}
-              className="px-3 py-1.5 rounded-full text-[0.82rem] text-slate-300 bg-white/4 border border-white/8 flex items-center gap-1.5"
+              className={[
+                "px-3 py-1.5 rounded-full text-[0.75rem]",
+                "border border-white/10 bg-slate-900/80 backdrop-blur-md",
+                "text-slate-300",
+              ].join(" ")}
             >
-              {stackIcons[s] && <span className="text-white-400">{stackIcons[s]}</span>}
-              {s}
+              {tag}
             </span>
-          ))}
+          </div>
+          <h3 className="text-[1.4rem] font-bold mb-2.5 transition-colors duration-300">{title}</h3>
+          <p className="text-slate-400 leading-[1.8] text-[0.95rem]">{description}</p>
+
+          {/* Stack pills */}
+          <div className="flex flex-wrap gap-2 mt-4.5">
+            {stack.map((s) => (
+              <span
+                key={s}
+                className="px-3 py-1.5 rounded-full text-[0.75rem] text-slate-300 bg-white/4 border border-white/8 flex items-center gap-1.5"
+              >
+                {stackIcons[s] && <span className="text-white-400">{stackIcons[s]}</span>}
+                {s}
+              </span>
+            ))}
+          </div>
         </div>
 
         {/* Actions */}
-        <div className="flex gap-3 mt-5 max-sm:flex-col">
+        <div className="flex gap-3 mt-6">
           <a
             href={demoUrl}
             target="_blank"
             rel="noreferrer"
             className={[
-              "px-4 py-2.5 rounded-xl text-[0.92rem] text-center",
+              "px-4 py-2.5 rounded-xl text-[0.92rem] text-center flex-1 md:flex-none",
               "bg-white/10 transition-all duration-300",
               "hover:-translate-y-0.5 hover:bg-violet-500/82",
             ].join(" ")}
@@ -86,7 +82,7 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
             target="_blank"
             rel="noreferrer"
             className={[
-              "px-4 py-2.5 rounded-xl text-[0.92rem] text-center",
+              "px-4 py-2.5 rounded-xl text-[0.92rem] text-center flex-1 md:flex-none",
               "border border-white/10 transition-all duration-300",
               "hover:-translate-y-0.5 hover:border-cyan-400/40 hover:bg-white/4",
             ].join(" ")}
@@ -94,6 +90,16 @@ function ProjectCard({ tag, title, description, image, stack, demoUrl, repoUrl }
             GitHub
           </a>
         </div>
+      </div>
+
+      {/* Image area — Right side (desktop) / Bottom (mobile) */}
+      <div className="project-image relative h-64 md:h-auto md:w-1/2 overflow-hidden order-1 md:order-2">
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+        />
       </div>
     </article>
   );
@@ -112,7 +118,7 @@ export default function Projects() {
           <p className="mt-3.5 text-slate-400">These are the projects that best show how I think, build, and design.</p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="flex flex-col gap-6">
           {projectsData.map((project) => (
             <ProjectCard key={project.title} {...project} />
           ))}
