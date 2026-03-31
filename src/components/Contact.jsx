@@ -1,11 +1,12 @@
 // ============================================================
-//  Contact.jsx — Icon Tile Square + Email Form
+//  Contact.jsx — Icon Tile Square + Email Form (EmailJS)
 // ============================================================
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { MdEmail } from "react-icons/md";
 import { FaGithub, FaInstagram, FaLinkedin } from "react-icons/fa";
 import { MdCheck } from "react-icons/md";
 import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 import { contactData, footerText } from "../data/portfolioData";
 import { useScrollReveal } from "../hooks";
 
@@ -50,27 +51,49 @@ function ContactTile({ label, href }) {
 // ── Email Form ───────────────────────────────────────────────
 function ContactForm() {
   const ref = useScrollReveal();
+  const formRef = useRef();
   const [form, setForm] = useState({ email: "", subject: "", message: "" });
   const [sent, setSent] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState("");
 
   const handleChange = (e) =>
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Compose mailto link with form values
-    const subject = encodeURIComponent(form.subject || "Contact from Portfolio");
-    const body = encodeURIComponent(
-      `Email: ${form.email}\n\nMessage:\n${form.message}`
-    );
-    window.location.href = `mailto:yadri.amz@gmail.com?subject=${subject}&body=${body}`;
-    setSent(true);
-    setTimeout(() => setSent(false), 4000);
+    setLoading(true);
+    setError("");
+
+    // EmailJS configuration
+    // TODO: Replace with your actual EmailJS credentials
+    const serviceId = "YOUR_SERVICE_ID";      // Your EmailJS service ID
+    const templateId = "YOUR_TEMPLATE_ID";    // Your EmailJS template ID
+    const publicKey = "YOUR_PUBLIC_KEY";      // Your EmailJS public key
+
+    emailjs
+      .sendForm(serviceId, templateId, formRef.current, publicKey)
+      .then(
+        (result) => {
+          console.log("Email sent successfully:", result.text);
+          setSent(true);
+          setForm({ email: "", subject: "", message: "" });
+          setTimeout(() => setSent(false), 4000);
+        },
+        (error) => {
+          console.error("Email send failed:", error.text);
+          setError("Failed to send message. Please try again.");
+          setTimeout(() => setError(""), 4000);
+        }
+      )
+      .finally(() => {
+        setLoading(false);
+      });
   };
 
   return (
     <form
-      ref={ref}
+      ref={formRef}
       onSubmit={handleSubmit}
       className="reveal w-full text-left flex flex-col gap-4"
     >
@@ -105,6 +128,8 @@ function ContactForm() {
             type="text"
             name="subject"
             placeholder="Subject"
+            value={form.subject}
+            onChange={handleChange}
             className={[
               "bg-slate-900/72 border border-white/8 rounded-xl px-4 py-2.5",
               "text-[0.95rem] text-white placeholder:text-slate-600",
@@ -135,19 +160,27 @@ function ContactForm() {
           />
         </div>
 
+        {/* Error Message */}
+        {error && (
+          <p className="text-red-400 text-sm">{error}</p>
+        )}
+
         {/* Submit */}
         <button
           type="submit"
+          disabled={loading || sent}
           className={[
             "mt-2 self-start flex items-center gap-2 px-6 py-3 rounded-xl",
             "bg-violet-500 hover:bg-violet-600 text-white text-[0.88rem] font-medium uppercase",
             "border border-none transition-all duration-200 hover:-translate-y-1",
             "hover:shadow-[0_6px_20px_rgba(124,58,237,0.3)]",
-            sent ? "opacity-60 pointer-events-none" : "group",
+            (sent || loading) ? "opacity-60 pointer-events-none" : "group",
           ].join(" ")}
         >
           {sent ? (
             <><MdCheck size={16} /> Sent!</>
+          ) : loading ? (
+            <>Sending...</>
           ) : (
             <>
               <span>Send Message</span>
