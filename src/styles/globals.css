@@ -35,7 +35,14 @@
 /* Ganti baris 33 */
 html, html:focus-within {
   scroll-behavior: smooth;
-  
+}
+
+:root {
+  --header-height: 78px; /* sesuaikan jika 62px ketika navbar menyusut */
+}
+
+section[id] {
+  scroll-margin-top: calc(var(--header-height) + 0.5rem);
 }
 
 html {
