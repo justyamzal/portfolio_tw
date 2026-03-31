@@ -84,7 +84,7 @@ export default function Skills() {
           <h2 className="mt-3.5 text-[clamp(2rem,4vw,3rem)] font-bold">Skills That Power My Work</h2>
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-6">
           {skillsData.map((skill) => (
             <SkillCard key={skill.title} {...skill} />
           ))}
