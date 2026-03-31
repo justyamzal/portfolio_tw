@@ -191,29 +191,27 @@ export default function Contact() {
 
               {/* Social Tiles */}
               <div className="flex flex-col gap-4">
-                {contactData.map((item) => (
-                  <a
-                    key={item.label}
-                    href={item.href}
-                    target={item.href.startsWith("mailto") ? undefined : "_blank"}
-                    rel="noreferrer"
-                    className={[
-                      "flex items-center gap-4 p-4 rounded-xl",
-                      "border border-white/8 bg-slate-900/72 backdrop-blur-[16px]",
-                      "transition-all duration-300 hover:-translate-y-1",
-                      "hover:border-violet-400/40 hover:shadow-[0_6px_24px_rgba(34,211,238,0.12)]",
-                      "hover:bg-violet-400/10 group",
-                    ].join(" ")}
-                  >
-                    <span className="text-white-400 transition-all duration-300 group-hover:text-white-300 group-hover:scale-110">
-                      {icons[item.label]}
-                    </span>
-                    <div className="flex flex-col">
-                      <span className="text-white font-medium text-[0.95rem]">{item.label}</span>
-                      <span className="text-slate-400 text-[0.85rem]">{item.label === 'Email' ? item.href.replace('mailto:', '') : item.href.replace('https://', '')}</span>
-                    </div>
-                  </a>
-                ))}
+                {contactData.map((item) => {
+                  const ref = useScrollReveal();
+                  return (
+                    <a
+                      ref={ref}
+                      key={item.label}
+                      href={item.href}
+                      target={item.href.startsWith("mailto") ? undefined : "_blank"}
+                      rel="noreferrer"
+                      className="reveal flex items-center gap-4 py-2 transition-all duration-300 group"
+                    >
+                      <div className="h-12 w-12 flex items-center justify-center rounded-lg border-2 border-violet-500/40 bg-transparent text-violet-300 transition-all duration-300 group-hover:border-violet-400 group-hover:text-violet-200 group-hover:scale-110">
+                        {icons[item.label]}
+                      </div>
+                      <div className="flex flex-col gap-0.5">
+                        <span className="text-white font-semibold text-base">{item.label}</span>
+                        <span className="text-slate-400 text-sm">{item.value}</span>
+                      </div>
+                    </a>
+                  );
+                })}
               </div>
             </div>
 
